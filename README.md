@@ -19,17 +19,23 @@ To get the repository on your local machine and to share your code, follow these
 1.  **Clone the repository:**
    Open your terminal, cd into the folder you want to clone the repository into, and run this command:
     ```bash
-    git clone git@github.com:Gold-Rush-Robotics/IEEE-2026-Prototypes.git
+    git clone https://github.com/Gold-Rush-Robotics/IEEE-2026-Prototypes.git
     ```
-    If this fails, make sure you download git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-3.  **Add your files:**
+    If this fails, make sure you download git:
+    - Windows: run `winget add git.git` in Terminal
+    - Linux (debian-based): run `sudo apt update && sudo apt install git`
+    - MacOS: see https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+    
+2.  **Add your files:**
     Place your new prototype folder and its contents into the local repository.
-4.  **Commit your changes:**
+    
+3.  **Commit your changes:**
     ```bash
     git add .
     git commit -m "Replace this with a message about what you did"
     ```
-5.  **Push your code so that it's available on the repository:**
+    
+4.  **Push your code so that it's available on the repository:**
     ```bash
     git push origin main
     ```
