@@ -1,0 +1,1 @@
+This is the the code in order for the Arduino to coexist with the color sensors, in order to interact with the antenna.
