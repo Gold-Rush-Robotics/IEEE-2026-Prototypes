@@ -35,9 +35,6 @@ String progress = "";
 //initialize an instance of class NewKeypad
 Adafruit_Keypad customKeypad = Adafruit_Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 
-
-
-
 void setup() {
   progress = "";
   Serial.begin(9600);
