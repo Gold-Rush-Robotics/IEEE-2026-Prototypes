@@ -21,6 +21,10 @@
 #define C2    9
 #define C3    10
 #define C4    11
+#define red   12
+#define green 7
+#define blue 6
+
 // leave this import after the above configuration
 #include "keypad_config.h"
 
@@ -30,10 +34,24 @@ String progress = "";
 //initialize an instance of class NewKeypad
 Adafruit_Keypad customKeypad = Adafruit_Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 
+
+
+
 void setup() {
   progress = "";
   Serial.begin(9600);
   customKeypad.begin();
+  pinMode(12, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(6, OUTPUT);
+}
+
+void colorSetter(uint8_t color)
+{
+  digitalWrite(green, LOW);
+  digitalWrite(red, LOW);
+  digitalWrite(blue, LOW);
+  digitalWrite(color, HIGH);
 }
 
 void loop() {
@@ -42,17 +60,24 @@ void loop() {
 
   while(customKeypad.available()){
     keypadEvent e = customKeypad.read();
+
+    colorSetter(blue);
        
     if (progress.length() >= 6)
     {
       if (progress == pass) 
       {
-        progress = "";
-        Serial.println("FUN");
+        Serial.println("SUCCESS!");
+        colorSetter(green);
       }
       else
+      {
         Serial.println("FAIL!");
+        colorSetter(red);
+      }
       progress = "";
+      delay(1000);
+      colorSetter(blue);
     }
 
     if (e.bit.EVENT == KEY_JUST_PRESSED)
