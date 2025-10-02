@@ -24,6 +24,7 @@
 #define red   12
 #define green 7
 #define blue 6
+#define bitter e.bit
 
 // leave this import after the above configuration
 #include "keypad_config.h"
@@ -77,11 +78,10 @@ void loop() {
       colorSetter(blue);
     }
 
-    if (e.bit.EVENT == KEY_JUST_PRESSED) // If most recent event is a button pressed...
+    if (bitter.EVENT == KEY_JUST_PRESSED) // If most recent event is a button pressed...
     {
-      progress += (char)e.bit.KEY; // Cast the key pressed to a char and add to progress.
+      progress += (char)bitter.KEY; // Cast the key pressed to a char and add to progress.
       Serial.println(progress); // Print current progress for debugging.
-    }
 
   }
 
