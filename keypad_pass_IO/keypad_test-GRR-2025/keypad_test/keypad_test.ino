@@ -24,6 +24,7 @@
 #define red   12
 #define green 7
 #define blue 6
+#define greenLED 13
 #define bitter e.bit
 
 // leave this import after the above configuration
@@ -36,20 +37,20 @@ String progress = ""; // Keeps track of what keys have been inputted.
 Adafruit_Keypad customKeypad = Adafruit_Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 
 void setup() {
-  //progress = ""; 
   Serial.begin(9600);
   customKeypad.begin();
   pinMode(12, OUTPUT);
   pinMode(7, OUTPUT);
   pinMode(6, OUTPUT);
+  pinMode(13, OUTPUT);
+  randomSeed(analogRead(0));
 }
 
-void colorSetter(uint8_t color) // Sets LED color to color.
+void colorSetter(uint8_t red_state, uint8_t green_state, uint8_t blue_state) 
 {
-  digitalWrite(green, LOW);
-  digitalWrite(red, LOW);
-  digitalWrite(blue, LOW);
-  digitalWrite(color, HIGH);
+  digitalWrite(red, red_state);
+  digitalWrite(green, green_state);
+  digitalWrite(blue, blue_state);
 }
 
 void loop() {
@@ -59,30 +60,44 @@ void loop() {
   while(customKeypad.available()){
     keypadEvent e = customKeypad.read(); // Reads most recent keypad event.
 
-    colorSetter(blue);
        
     if (progress.length() >= 6) // When progress equals length of correct code...
     {
       if (progress == pass) // Checking if progress equals the correct code.
       {
         Serial.println("SUCCESS!");
-        colorSetter(green);
+        int rand = random(1, 5); // Generates a random number between 1 and 4.
+        switch (rand) {
+          case 1: // Red
+            colorSetter(HIGH, LOW, LOW);
+            break;
+          case 2: // Green
+            colorSetter(LOW, HIGH, LOW);
+            break;
+          case 3:
+            colorSetter(LOW, LOW, HIGH);
+            break;
+          case 4: //Purple
+            colorSetter(HIGH, LOW, HIGH);
+            break;
+        }
+        digitalWrite(greenLED, HIGH);
       }
       else
       {
         Serial.println("FAIL!");
-        colorSetter(red);
       }
       progress = ""; // Reset progress for next attempt.
-      delay(1000); // LED stays red/green for 1 second before switching back to blue for standby.
-      colorSetter(blue);
+      delay(1000); // LED stays on for 1 second before turning back off for standby.
+      colorSetter(LOW, LOW, LOW); // off
+      digitalWrite(greenLED, LOW);
     }
 
     if (bitter.EVENT == KEY_JUST_PRESSED) // If most recent event is a button pressed...
     {
       progress += (char)bitter.KEY; // Cast the key pressed to a char and add to progress.
       Serial.println(progress); // Print current progress for debugging.
-
+    }
   }
 
   delay(10);
