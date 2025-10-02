@@ -28,14 +28,14 @@
 // leave this import after the above configuration
 #include "keypad_config.h"
 
-String pass = "73738#";
-String progress = "";
+String pass = "73738#"; // Correct input expected.
+String progress = ""; // Keeps track of what keys have been inputted.
 
 //initialize an instance of class NewKeypad
 Adafruit_Keypad customKeypad = Adafruit_Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 
 void setup() {
-  progress = "";
+  //progress = ""; 
   Serial.begin(9600);
   customKeypad.begin();
   pinMode(12, OUTPUT);
@@ -43,7 +43,7 @@ void setup() {
   pinMode(6, OUTPUT);
 }
 
-void colorSetter(uint8_t color)
+void colorSetter(uint8_t color) // Sets LED color to color.
 {
   digitalWrite(green, LOW);
   digitalWrite(red, LOW);
@@ -52,17 +52,17 @@ void colorSetter(uint8_t color)
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Main code that runs repeatedly:
   customKeypad.tick();
 
   while(customKeypad.available()){
-    keypadEvent e = customKeypad.read();
+    keypadEvent e = customKeypad.read(); // Reads most recent keypad event.
 
     colorSetter(blue);
        
-    if (progress.length() >= 6)
+    if (progress.length() >= 6) // When progress equals length of correct code...
     {
-      if (progress == pass) 
+      if (progress == pass) // Checking if progress equals the correct code.
       {
         Serial.println("SUCCESS!");
         colorSetter(green);
@@ -72,15 +72,15 @@ void loop() {
         Serial.println("FAIL!");
         colorSetter(red);
       }
-      progress = "";
-      delay(1000);
+      progress = ""; // Reset progress for next attempt.
+      delay(1000); // LED stays red/green for 1 second before switching back to blue for standby.
       colorSetter(blue);
     }
 
-    if (e.bit.EVENT == KEY_JUST_PRESSED)
+    if (e.bit.EVENT == KEY_JUST_PRESSED) // If most recent event is a button pressed...
     {
-      progress += (char)e.bit.KEY;
-      Serial.println(progress);
+      progress += (char)e.bit.KEY; // Cast the key pressed to a char and add to progress.
+      Serial.println(progress); // Print current progress for debugging.
     }
 
   }
