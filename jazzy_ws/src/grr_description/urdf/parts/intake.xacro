@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="intake" params="parent *origin">
+    <link name="intake_link">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <mesh filename="package://grr_description/meshes/intake.stl" scale="1 1 1"/>
+        </geometry>
+        <material name="yellow"/>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <box size="0.1 0.1 0.1"/>
+        </geometry>
+        </collision>
+    </link>
+    
+    <joint name="intake_joint" type="fixed">
+        <parent link="${parent}"/>
+        <child link="intake_link"/>
+        <xacro:insert_block name="origin" />
+    </joint>
+    <link name="intake_roller_1_link">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <mesh filename="package://grr_description/meshes/intake_roller.stl" scale="1 1 1"/>
+        </geometry>
+        <material name="red"/>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <box size="0.1 0.1 0.1"/>
+        </geometry>
+        </collision>
+    </link>
+    <joint name="intake_roller_1_joint" type="continuous">
+        <parent link="intake_link"/>
+        <child link="intake_roller_1_link"/>
+        <origin xyz="-0.0675 -0.05 -0.095" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+    <link name="intake_roller_2_link">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 3.1415"/>
+        <geometry>
+            <mesh filename="package://grr_description/meshes/intake_roller.stl" scale="1 1 1"/>
+        </geometry>
+        <material name="red"/>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <box size="0.1 0.1 0.1"/>
+        </geometry>
+        </collision>
+    </link>
+    <joint name="intake_roller_2_joint" type="continuous">
+        <parent link="intake_link"/>
+        <child link="intake_roller_2_link"/>
+        <origin xyz="-0.075 0.01 0.05" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+</xacro:macro>
+</robot>

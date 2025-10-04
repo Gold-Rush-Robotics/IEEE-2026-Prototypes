@@ -1,0 +1,81 @@
+[0.015s] Invoking command in '/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/build/grr_hardware': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/build/grr_hardware -- -j16 -l16
+[0.074s] [ 33%] [32mBuilding CXX object CMakeFiles/grr_hardware.dir/src/isaac_drive.cpp.o[0m
+[0.417s] In file included from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/include/grr_hardware/isaac_drive.hpp:33[m[K,
+[0.417s]                  from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:15[m[K:
+[0.417s] [01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_box.h:25:2:[m[K [01;35m[Kwarning: [m[K#warning "This header include is deprecated. Please update your code to use 'realtime_box.hpp' header." [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+[0.417s]    25 | #[01;35m[Kwarning[m[K \
+[0.417s]       |  [01;35m[K^~~~~~~[m[K
+[0.417s] In file included from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/include/grr_hardware/isaac_drive.hpp:34[m[K:
+[0.417s] [01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_buffer.h:25:2:[m[K [01;35m[Kwarning: [m[K#warning "This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header." [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+[0.417s]    25 | #[01;35m[Kwarning[m[K \
+[0.417s]       |  [01;35m[K^~~~~~~[m[K
+[0.417s] In file included from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/include/grr_hardware/isaac_drive.hpp:35[m[K:
+[0.418s] [01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_publisher.h:25:2:[m[K [01;35m[Kwarning: [m[K#warning "This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header." [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+[0.418s]    25 | #[01;35m[Kwarning[m[K \
+[0.418s]       |  [01;35m[K^~~~~~~[m[K
+[1.626s] In file included from [01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_box.h:18[m[K:
+[1.626s] [01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_box.hpp:40:151:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: 'RealtimeBox' is deprecated. Please update your code to use 'realtime_thread_safe_box.hpp' header, and class name 'RealtimeThreadSafeBox' instead.[m[K’
+[1.626s]    40 | update your code to use 'realtime_thread_safe_box.hpp' header, and class name 'RealtimeThreadSafeBox' instead."[01;36m[K)[m[K  //NOLINT
+[1.626s]       |                                                                                                                [01;36m[K^[m[K
+[1.626s] 
+[1.648s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn grr_hardware::IsaacDriveHardware::[01;32m[Kon_init[m[K(const hardware_interface::HardwareInfo&)[m[K’:
+[1.648s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:45:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kreceived_joint_msg_ptr[m[K’ was not declared in this scope; did you mean ‘[01m[Kreceived_joint_msg_ptr_[m[K’?
+[1.648s]    45 |   [01;31m[Kreceived_joint_msg_ptr[m[K->std::make_shared<sensor_msgs::msg::JointState>(empty_joint_state);
+[1.648s]       |   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.648s]       |   [32m[Kreceived_joint_msg_ptr_[m[K
+[1.648s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:45:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd::make_shared<sensor_msgs::msg::JointState>[m[K’ is not a class member
+[1.648s]    45 |   received_joint_msg_ptr->[01;31m[Kstd[m[K::make_shared<sensor_msgs::msg::JointState>(empty_joint_state);
+[1.648s]       |                           [01;31m[K^~~[m[K
+[1.648s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:[m[K In lambda function:
+[1.648s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:53:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<sensor_msgs::msg::JointState_<std::allocator<void> > >[m[K’ has no member named ‘[01m[Kset[m[K’; did you mean ‘[01m[Kget[m[K’?
+[1.648s]    53 |       received_joint_msg_ptr_.[01;31m[Kset[m[K(std::move(msg));
+[1.648s]       |                               [01;31m[K^~~[m[K
+[1.648s]       |                               [32m[Kget[m[K
+[1.649s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn grr_hardware::IsaacDriveHardware::[01;32m[Kon_init[m[K(const hardware_interface::HardwareInfo&)[m[K’:
+[1.649s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:58:51:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvirtual rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn hardware_interface::HardwareComponentInterface::[01;32m[Kon_init[m[K(const hardware_interface::HardwareInfo&)[m[K’ is deprecated: Use on_init(const HardwareComponentInterfaceParams & params) instead. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[1.649s]    58 |   if ([01;35m[Khardware_interface::SystemInterface::on_init(info)[m[K != CallbackReturn::SUCCESS)
+[1.649s]       |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[1.649s] In file included from [01m[K/opt/ros/jazzy/include/hardware_interface/hardware_interface/system_interface.hpp:18[m[K,
+[1.649s]                  from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/include/grr_hardware/isaac_drive.hpp:25[m[K:
+[1.649s] [01m[K/opt/ros/jazzy/include/hardware_interface/hardware_interface/hardware_component_interface.hpp:209:26:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.649s]   209 |   virtual CallbackReturn [01;36m[Kon_init[m[K(const HardwareInfo & hardware_info)
+[1.649s]       |                          [01;36m[K^~~~~~~[m[K
+[1.654s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type grr_hardware::IsaacDriveHardware::[01;32m[Kread[m[K(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[1.654s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:218:30:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd::shared_ptr<sensor_msgs::msg::JointState_<std::allocator<void> > >::get(std::shared_ptr<sensor_msgs::msg::JointState_<std::allocator<void> > >&)[m[K’
+[1.654s]   218 |   [01;31m[Kreceived_joint_msg_ptr_.get(last_command_msg)[m[K;
+[1.654s]       |   [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+[1.654s] In file included from [01m[K/usr/include/c++/13/bits/shared_ptr.h:53[m[K,
+[1.654s]                  from [01m[K/usr/include/c++/13/memory:80[m[K,
+[1.654s]                  from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/include/grr_hardware/isaac_drive.hpp:18[m[K:
+[1.654s] [01m[K/usr/include/c++/13/bits/shared_ptr_base.h:1665:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::__shared_ptr<_Tp, _Lp>::element_type* std::__shared_ptr<_Tp, _Lp>::[01;32m[Kget[m[K() const [35m[K[with _Tp = sensor_msgs::msg::JointState_<std::allocator<void> >; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic; element_type = sensor_msgs::msg::JointState_<std::allocator<void> >][m[K[m[K’
+[1.654s]  1665 |       [01;36m[Kget[m[K() const noexcept
+[1.654s]       |       [01;36m[K^~~[m[K
+[1.654s] [01m[K/usr/include/c++/13/bits/shared_ptr_base.h:1665:7:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+[1.654s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:214:93:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[1.654s]   214 | hardware_interface::return_type grr_hardware::IsaacDriveHardware::read([01;35m[Kconst rclcpp::Time & time[m[K, const rclcpp::Duration & period)
+[1.655s]       |                                                                        [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[1.655s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:214:124:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[1.655s]   214 | _interface::return_type grr_hardware::IsaacDriveHardware::read(const rclcpp::Time & time, [01;35m[Kconst rclcpp::Duration & period[m[K)
+[1.655s]       |                                                                                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[1.655s] 
+[1.656s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type grr_hardware::IsaacDriveHardware::[01;32m[Kwrite[m[K(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[1.656s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:247:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing std::__shared_ptr_access<rclcpp::Publisher<sensor_msgs::msg::JointState_<std::allocator<void> > >, __gnu_cxx::_S_atomic, false, false>::element_type = class rclcpp::Publisher<sensor_msgs::msg::JointState_<std::allocator<void> > >[m[K’ {aka ‘[01m[Kclass rclcpp::Publisher<sensor_msgs::msg::JointState_<std::allocator<void> > >[m[K’} has no member named ‘[01m[Ktrylock[m[K’
+[1.656s]   247 |   if (isaac_publisher_->[01;31m[Ktrylock[m[K()) {
+[1.656s]       |                         [01;31m[K^~~~~~~[m[K
+[1.656s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:248:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing std::__shared_ptr_access<rclcpp::Publisher<sensor_msgs::msg::JointState_<std::allocator<void> > >, __gnu_cxx::_S_atomic, false, false>::element_type = class rclcpp::Publisher<sensor_msgs::msg::JointState_<std::allocator<void> > >[m[K’ {aka ‘[01m[Kclass rclcpp::Publisher<sensor_msgs::msg::JointState_<std::allocator<void> > >[m[K’} has no member named ‘[01m[Kmsg_[m[K’
+[1.656s]   248 |     auto & realtime_isaac_command = isaac_publisher_->[01;31m[Kmsg_[m[K;
+[1.656s]       |                                                       [01;31m[K^~~~[m[K
+[1.656s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:254:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing std::__shared_ptr_access<rclcpp::Publisher<sensor_msgs::msg::JointState_<std::allocator<void> > >, __gnu_cxx::_S_atomic, false, false>::element_type = class rclcpp::Publisher<sensor_msgs::msg::JointState_<std::allocator<void> > >[m[K’ {aka ‘[01m[Kclass rclcpp::Publisher<sensor_msgs::msg::JointState_<std::allocator<void> > >[m[K’} has no member named ‘[01m[KunlockAndPublish[m[K’
+[1.656s]   254 |     isaac_publisher_->[01;31m[KunlockAndPublish[m[K();
+[1.656s]       |                       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[1.656s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:243:94:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[1.656s]   243 | hardware_interface::return_type grr_hardware::IsaacDriveHardware::write([01;35m[Kconst rclcpp::Time & time[m[K, const rclcpp::Duration & period)
+[1.656s]       |                                                                         [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[1.656s] [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:243:125:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[1.656s]   243 | interface::return_type grr_hardware::IsaacDriveHardware::write(const rclcpp::Time & time, [01;35m[Kconst rclcpp::Duration & period[m[K)
+[1.656s]       |                                                                                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[1.656s] 
+[3.010s] gmake[2]: *** [CMakeFiles/grr_hardware.dir/build.make:76: CMakeFiles/grr_hardware.dir/src/isaac_drive.cpp.o] Error 1
+[3.010s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/grr_hardware.dir/all] Error 2
+[3.010s] gmake: *** [Makefile:146: all] Error 2
+[3.012s] Invoked command in '/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/build/grr_hardware' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/build/grr_hardware -- -j16 -l16

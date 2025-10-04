@@ -1,0 +1,13 @@
+Chassis
+Length: 180mm
+Width: 330mm
+Height: 135mm
+
+Joint Position
+Toward Front: 145mm
+Toward Side: 90mm
+Toward bottom: 121
+
+Wheel
+Thickness: 42mm
+Diameter ~: 46.575mm

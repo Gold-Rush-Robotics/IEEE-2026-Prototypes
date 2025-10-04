@@ -1,0 +1,16 @@
+<library path="grr_hardware">
+  <class name="grr_hardware/IsaacDriveHardware"
+         type="grr_hardware::IsaacDriveHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      The ROS2 Control hardware interface to talk with Isaac Sim robot drive train.
+    </description>
+  </class>
+  <class name="grr_hardware/CanInterface"
+         type="grr_hardware::CanInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      The ROS2 Control hardware interface to talk with CAN bus.
+    </description>
+  </class>
+</library>

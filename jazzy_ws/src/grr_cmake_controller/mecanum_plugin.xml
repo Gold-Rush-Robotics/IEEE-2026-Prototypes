@@ -1,0 +1,7 @@
+<library path="grr_cmake_controller">
+  <class name="grr_cmake_controller/MecanumController" type="grr_cmake_controller::MecanumController" base_class_type="controller_interface::ControllerInterface">
+  <description>
+    The differential mecanum controller transforms linear and angular velocity messages into signals for each wheel(s) for a differential drive robot.
+  </description>
+  </class>
+</library>

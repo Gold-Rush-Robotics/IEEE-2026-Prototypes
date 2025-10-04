@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="baseline" value="0.12" />
+  <xacro:property name="height" value="0.03" />
+  <xacro:property name="bottom_slope" value="0.0" />
+  <xacro:property name="screw_offset_x" value="-0.01" />
+  <xacro:property name="optical_offset_x" value="-0.01" />
+  <xacro:property name="M_PI"     value="3.1415926535897931" />
+
+  <material name="zed2i_mat">
+    <color rgba="0.25 0.25 0.25 0.99"/>
+  </material>
+
+  <xacro:macro name="zed_camera" params="parent *origin">
+  <!--Screw Mount-->
+    <link name="zed_mount_link"/>
+    <joint name="zed_mount_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="zed_mount_link"/>
+      <xacro:insert_block name="origin" />
+    </joint>
+
+    <link name="zed_camera_center">
+      <visual>
+        <origin xyz="${screw_offset_x} 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://grr_description/meshes/zed2i.stl" />
+        </geometry>
+        <material name="zed2i_mat" />
+      </visual>
+      <collision>
+        <geometry>
+          <box size="${height} ${baseline} ${height}"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="zed_camera_center_joint" type="fixed">
+      <parent link="zed_mount_link"/>
+      <child link="zed_camera_center"/>
+      <origin xyz="0 0 ${height/2}" rpy="0 ${bottom_slope} 0" />
+    </joint>
+
+
+    <!-- Left Camera -->
+    <link name="zed_left_camera_frame" />
+    <joint name="zed_left_camera_joint" type="fixed">
+      <parent link="zed_camera_center"/>
+      <child link="zed_left_camera_frame"/>
+      <origin xyz="0 ${baseline/2} 0" rpy="${M_PI/2} 0 -${M_PI/2}" />
+    </joint>
+
+    <link name="zed_left_camera_optical_frame"/>
+    <joint name="zed_left_camera_optical_joint" type="fixed">
+      <origin xyz="${optical_offset_x} 0 0" rpy="-${M_PI/2} 0.0 -${M_PI/2}"/>
+      <parent link="zed_left_camera_frame"/>
+      <child link="zed_left_camera_optical_frame"/>
+    </joint>
+
+
+    <!-- Right Camera -->
+    <link name="zed_right_camera_frame" />      //call assign id function
+
+    <joint name="zed_right_camera_joint" type="fixed">
+      <parent link="zed_camera_center"/>
+      <child link="zed_right_camera_frame"/>
+      <origin xyz="0 -${baseline/2} 0" rpy="0 0 0" />
+    </joint>
+
+    <link name="zed_right_camera_optical_frame"/>
+    <joint name="zed_right_camera_optical_joint" type="fixed">
+      <origin xyz="${optical_offset_x} 0 0" rpy="-${M_PI/2} 0.0 -${M_PI/2}"/>
+      <parent link="zed_right_camera_frame"/>
+      <child link="zed_right_camera_optical_frame"/>
+    </joint>
+
+
+  </xacro:macro>
+</robot>

@@ -1,0 +1,2 @@
+Invoking command in '/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/build/grr_hardware': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/build/grr_hardware -- -j16 -l16
+Invoked command in '/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/build/grr_hardware' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/build/grr_hardware -- -j16 -l16

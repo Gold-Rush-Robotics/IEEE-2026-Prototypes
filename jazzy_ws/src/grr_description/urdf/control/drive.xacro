@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <ros2_control name="gregg" type="system">
+    <hardware>
+      <plugin>grr_hardware/IsaacDriveHardware</plugin>
+      <param name="example_param_hw_start_duration_sec">3.0</param>
+      <param name="example_param_hw_stop_duration_sec">3.0</param>
+      <param name="teensy1_serial_number">3030313330356332</param>
+      <param name="teensy1_joint_names">
+        <item>front_right_mecanum_joint</item>
+        <item>front_left_mecanum_joint</item>
+      </param>
+      <param name="front_right_mecanum_joint">
+        <item name="DIR">1</item>
+        <item name="PWM">2</item>
+        <item name="SLP">7</item>
+        <item name="FLT">8</item>
+        <item name="ENC_OUTA">11</item>
+        <item name="ENC_OUTB">12</item>
+        <item name="CS">23</item>
+      </param>
+      <param name="front_left_mecanum_joint">
+        <item name="DIR">29</item>
+        <item name="PWM">28</item>
+        <item name="SLP">34</item>
+        <item name="FLT">35</item>
+        <item name="ENC_OUTA">24</item>
+        <item name="ENC_OUTB">25</item>
+        <item name="CS">40</item>
+      </param>
+      <param name="teensy2_joint_names">
+        <item>rear_right_mecanum_joint</item>
+        <item>rear_left_mecanum_joint</item>
+        <item>intake_roller_1_joint</item>
+        <item>intake_roller_2_joint</item>
+        <item>sorter_turntable_joint</item>
+        <item>left_bin_grabber_pivot_joint</item>
+        <item>left_bin_grabber_finger_joint</item>
+        <item>right_bin_grabber_pivot_joint</item>
+        <item>right_bin_grabber_finger_joint</item>
+      </param>
+      <param name="rear_right_mecanum_joint">
+        <item name="DIR">1</item>
+        <item name="PWM">2</item>
+        <item name="SLP">7</item>
+        <item name="FLT">8</item>
+        <item name="ENC_OUTA">11</item>
+        <item name="ENC_OUTB">12</item>
+        <item name="CS">23</item>
+      </param>
+      <param name="rear_left_mecanum_joint">
+        <item name="DIR">29</item>
+        <item name="PWM">28</item>
+        <item name="SLP">34</item>
+        <item name="FLT">35</item>
+        <item name="ENC_OUTA">24</item>
+        <item name="ENC_OUTB">25</item>
+        <item name="CS">40</item>
+      </param>
+      <param name="intake_roller_1_joint">
+        <item name="PWM">36</item>
+      </param>
+      <param name="intake_roller_2_joint">
+        <item name="PWM">37</item>
+      </param>
+      <param name="sorter_turntable_joint">
+        <item name="PWM">3</item>
+      </param>
+      <param name="left_bin_grabber_pivot_joint">
+        <item name="PWM">4</item>
+      </param>
+      <param name="left_bin_grabber_finger_joint">
+        <item name="PWM">5</item>
+      </param>
+      <param name="right_bin_grabber_pivot_joint">
+        <item name="PWM">6</item>
+      </param>
+      <param name="right_bin_grabber_finger_joint">
+        <item name="PWM">9</item>
+      </param>
+        
+      <param name="teensy2_serial_number">3030313330356332</param>
+    </hardware>
+    <joint name="front_right_mecanum_joint">
+      <command_interface name="velocity">
+        <param name="min">-1</param>
+        <param name="max">1</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="rear_left_mecanum_joint">
+      <command_interface name="velocity">
+        <param name="min">-1</param>
+        <param name="max">1</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="front_left_mecanum_joint">
+      <command_interface name="velocity">
+        <param name="min">-1</param>
+        <param name="max">1</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="rear_right_mecanum_joint">
+      <command_interface name="velocity">
+        <param name="min">-1</param>
+        <param name="max">1</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="intake_roller_1_joint">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="intake_roller_2_joint">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="sorter_turntable_joint">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="left_bin_grabber_pivot_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="left_bin_grabber_finger_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="right_bin_grabber_pivot_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="right_bin_grabber_finger_joint">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+  </ros2_control>
+
+</robot>

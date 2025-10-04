@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="chassis" params="parent *origin length width height mass">
+
+    <link name="chassis_link">
+      <xacro:inertial_box mass="${mass}" x="${length}" y="${width}" z="${height}">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </xacro:inertial_box>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 ${M_PI}"/>
+        <geometry>
+          <mesh filename="package://grr_description/meshes/drivebase.stl" scale="1 1 1"/>
+        </geometry>
+        <!-- <material name="blue"/> -->
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${length} ${width} ${height/2}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="chassis_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="chassis_link"/>
+      <xacro:insert_block name="origin" />
+    </joint>
+  </xacro:macro>
+</robot>

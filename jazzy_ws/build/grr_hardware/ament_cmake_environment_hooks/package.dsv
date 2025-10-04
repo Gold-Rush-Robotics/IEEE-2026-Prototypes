@@ -1,0 +1,4 @@
+source;share/grr_hardware/local_setup.bash
+source;share/grr_hardware/local_setup.dsv
+source;share/grr_hardware/local_setup.sh
+source;share/grr_hardware/local_setup.zsh

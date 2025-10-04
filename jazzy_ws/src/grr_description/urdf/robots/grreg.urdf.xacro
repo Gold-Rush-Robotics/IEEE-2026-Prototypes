@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<robot name="test_robot_2026" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+  <!-- Include Files -->
+  <xacro:include filename="$(find grr_description)/urdf/util/macros.xacro" />
+  <xacro:include filename="$(find grr_description)/urdf/util/materials.xacro" />
+  <xacro:include filename="$(find grr_description)/urdf/parts/chassis.xacro"/>
+  <xacro:include filename="$(find grr_description)/urdf/parts/mecanum_wheel.xacro"/>
+  <xacro:include filename="$(find grr_description)/urdf/parts/mecanum_roller.xacro"/>
+  <!-- <xacro:include filename="$(find grr_description)/urdf/parts/becan.xacro"/> -->
+  <xacro:include filename="$(find grr_description)/urdf/parts/intake.xacro"/>
+  <xacro:include filename="$(find grr_description)/urdf/parts/sorter.xacro"/>
+  <xacro:include filename="$(find grr_description)/urdf/parts/bin_grabber.xacro"/>
+  <xacro:include filename="$(find grr_description)/urdf/parts/zed_macro.xacro"/>
+  <xacro:include filename="$(find grr_description)/urdf/control/drive.xacro"/>
+
+
+  <!-- Properties -->
+  <xacro:property name="chassis_length" value="0.18" />
+  <xacro:property name="chassis_width" value="0.33" />
+  <xacro:property name="chassis_height" value="0.135" />
+  <xacro:property name="chassis_weight" value="2.45" />
+
+  <xacro:property name="wheel_radius" value="${0.0375-0.01497/2}" />
+  <xacro:property name="wheel_thickness" value="0.042" />
+  <xacro:property name="wheel_weight" value="0.136" />
+  <xacro:property name="wheel_offset" value="0" />
+
+  <xacro:property name="wheel_joint_pos_x" value="0.09" />
+  <xacro:property name="wheel_joint_pos_y" value="0.10075" />
+  <xacro:property name="wheel_joint_pos_z" value="0.07793" />
+  
+  <xacro:property name="roller_total" value="8" />
+  <xacro:property name="roller_middle_radius" value="${0.01621/2}" />
+  <xacro:property name="roller_second_radius" value="${0.01591/2}" />
+  <xacro:property name="roller_third_radius" value="${0.01497/2}" />
+  <xacro:property name="roller_cylinder_radius" value="0.0074" />
+  <xacro:property name="roller_length" value="0.0381" />
+
+
+  <link name="base_link"/>
+  <!-- <xacro:grreg /> -->
+  <!-- Assembly -->
+  <xacro:chassis length="${chassis_length}" width="${chassis_width}"  height="${chassis_height}"  mass="${chassis_weight}" parent="base_link">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:chassis>
+
+  <xacro:mecanum_with_rollers
+    name="front_left"
+    type="1"
+    radius="${wheel_radius}"  
+    width="${wheel_thickness}"
+    flip="-${pi/2}"
+    pos_x="${wheel_joint_pos_x + wheel_offset}" 
+    pos_y="${wheel_joint_pos_y}" 
+    pos_z="-${0}"
+    mass="${wheel_weight}"
+  />
+
+  <xacro:mecanum_with_rollers
+    name="rear_right"
+    type="1"
+    radius="${wheel_radius}" 
+    width="${wheel_thickness}"
+    flip="-${pi/2}"
+    pos_x="-${wheel_joint_pos_x + wheel_offset}" 
+    pos_y="-${wheel_joint_pos_y}" 
+    pos_z="-${0}" 
+    mass="${wheel_weight}"
+  />
+
+  <xacro:mecanum_with_rollers
+    name="rear_left"
+    type="2"
+    radius="${wheel_radius}" 
+    width="${wheel_thickness}"
+    flip="-${pi/2}"
+    pos_x="-${wheel_joint_pos_x + wheel_offset}" 
+    pos_y="${wheel_joint_pos_y}" 
+    pos_z="-${0}" 
+    mass="${wheel_weight}"
+  /> 
+
+  <xacro:mecanum_with_rollers
+    name="front_right"
+    type="2"
+    radius="${wheel_radius}" 
+    width="${wheel_thickness}"
+    flip="-${pi/2}"
+    pos_x="${wheel_joint_pos_x + wheel_offset}" 
+    pos_y="-${wheel_joint_pos_y}" 
+    pos_z="-${0}" 
+    mass="${wheel_weight}"
+  /> 
+
+<!-- <xacro:becan
+    parent="base_link"
+    origin="0 0 0"
+  /> -->
+
+  <xacro:intake parent="chassis_link">
+    <origin xyz="0.055 0.025 0.105" rpy="0 ${M_PI} 0"/>
+  </xacro:intake>
+
+  <xacro:sorter parent="chassis_link">
+    <origin xyz="-0.025 0 0.125" rpy="0 0 0"/>
+  </xacro:sorter>
+  
+  <xacro:bin_grabber parent="chassis_link" prefix="left" reverse="-1"> 
+    <origin xyz="-0.105 -0.085 0.065" rpy="0 0 0"/>
+  </xacro:bin_grabber>
+  
+  <xacro:bin_grabber parent="chassis_link" prefix="right" reverse="1"> 
+    <origin xyz="-0.105 0.085 0.065" rpy="0 0 ${M_PI}"/>
+  </xacro:bin_grabber>
+
+  <xacro:zed_camera name="zed21" model="zed2i" enable_gnss="false" custom_baseline="0"
+    parent="chassis_link">
+    <origin
+        xyz="0 0 0"
+        rpy="${3.1415/12} ${3.1415/2} 0" />
+    <gnss_origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+  </xacro:zed_camera>
+
+</robot>

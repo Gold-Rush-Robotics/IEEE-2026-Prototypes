@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="mecanum_with_rollers" params="name type radius width flip pos_x pos_y pos_z mass">
+    <link name="${name}_mecanum_link">
+      <xacro:inertial_cylinder mass="${mass+1}" length="${width}" radius="${radius}">
+        <origin xyz="0 0 0" rpy="0 ${pi/2} 0"/>
+      </xacro:inertial_cylinder>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://grr_description/meshes/mecanum_wheel_${type}.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="orange"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="${radius}" length="${width}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="${name}_mecanum_joint" type="continuous">
+      <origin xyz="${pos_x} ${pos_y} ${pos_z}" rpy="0 ${flip} 0"/>
+      <parent link="chassis_link"/>
+      <child link="${name}_mecanum_link"/>
+      <axis xyz="0.0 ${copysign(1, (flip * -1))} 0.0 "/>
+    </joint>
+
+    <!-- There will be 8 rollers for each wheel -->
+    <xacro:roller name="${name}" number="0" />
+    <xacro:roller name="${name}" number="1" />
+    <xacro:roller name="${name}" number="2" />
+    <xacro:roller name="${name}" number="3" />
+    <xacro:roller name="${name}" number="4" />
+    <xacro:roller name="${name}" number="5" />
+    <xacro:roller name="${name}" number="6" />
+    <xacro:roller name="${name}" number="7" />
+  </xacro:macro>
+  
+</robot>

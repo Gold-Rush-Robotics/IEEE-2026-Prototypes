@@ -1,0 +1,25 @@
+grr/robot:
+  ros__parameters:
+    pca_address: 0x40
+    pca_frequency: 100
+    servo_mapping:
+      bridge_latch_joint:
+        port: 3
+        maximum: 4850
+        minimum: 3500
+      mechanism_lift_joint:
+        port: 14
+        maximum: 16435
+        minimum: 10000
+      mechanism_package_joint:
+        port: 13
+        maximum: 10800
+        minimum: 6000
+      mechanism_thruster_joint:
+        port: 12
+        maximum: 11500
+        minimum: 3000
+      small_package_sweeper_joint:
+        port: 15
+        maximum: 10500
+        minimum: 2000

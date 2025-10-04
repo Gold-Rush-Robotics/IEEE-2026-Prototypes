@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <xacro:macro name="roller" params="name number">
+
+    <!-- Type Offset: When type 1 output 1. When type 2 output -1 -->
+    <xacro:property name="type_offset" value="${(type * 2 - 3) }" />
+    
+    <!-- Compute incremental radians to place the roller around the hub -->
+    <xacro:property name="roller_radians" value="${(2 * pi / roller_total * number)}" />
+    
+    <!-- Figure out the x and y position of the roller from radian value -->
+    <xacro:property name="roller_x_pos" value="${sin(roller_radians) * wheel_radius}" />
+    <xacro:property name="roller_z_pos" value="${cos(roller_radians) * wheel_radius}" />
+    
+    <!-- Figure out how much to rotate a roller. It should be angled 45 degrees -->
+    <xacro:property name="roller_x_rot" value="${sin(roller_radians) * (pi/4) * type_offset}" />
+    <xacro:property name="roller_y_rot" value="${cos(roller_radians) * (pi/4) * type_offset}" />
+    <xacro:property name="roller_z_rot" value="0"/>
+    <!-- <xacro:if value="${number==1}">
+    </xacro:if>
+    <xacro:if value="${number==3}">
+    </xacro:if>
+    <xacro:if value="${number==5}">
+    </xacro:if>
+    <xacro:if value="${number==7}">
+      <xacro:property name="roller_x_rot" value="${(sin(roller_radians) * (pi/4) * type_offset)+(1.831*pi/180)}" />
+      <xacro:property name="roller_y_rot" value="${(cos(roller_radians) * (pi/4) * type_offset)+(3.095*pi/180)}" />
+      <xacro:property name="roller_z_rot" value="${(5.395*pi/180)}"/>
+    </xacro:if> -->
+
+    <link name="${name}_roller_${number}">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 -${M_PI/2} "/>
+        <geometry>
+          <mesh filename="package://grr_description/meshes/mecanum_roller.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="grey"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://grr_description/meshes/mecanum_roller.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+      <xacro:inertial_cylinder mass="0.07" radius="${roller_cylinder_radius}" length="${roller_length}">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </xacro:inertial_cylinder>
+    </link>
+    
+
+    <joint name="${name}_roller_${number}_joint" type="continuous">
+      <origin xyz="${roller_x_pos} 0 ${roller_z_pos}" rpy="${roller_x_rot} ${roller_z_rot} ${roller_y_rot}"/>
+      <parent link="${name}_mecanum_link"/>
+      <child link="${name}_roller_${number}"/>
+      <axis xyz="0.0 0.0 1.0"/>
+    </joint>
+  </xacro:macro>
+
+</robot>

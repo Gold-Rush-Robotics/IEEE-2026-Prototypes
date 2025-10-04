@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="bin_grabber" params="parent *origin prefix reverse">
+
+    <link name="${prefix}_bin_grabber_base_link">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 ${3.1415/2*reverse}"/>
+        <geometry>
+            <mesh filename="package://grr_description/meshes/bingrab${prefix}_bottom.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="yellow"/>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <box size="0.1 0.1 0.1"/>
+        </geometry>
+        </collision>
+    </link>
+    
+    <joint name="${prefix}_bin_grabber_base_link" type="fixed">
+        <parent link="${parent}"/>
+        <child link="${prefix}_bin_grabber_base_link"/>
+        <xacro:insert_block name="origin" />
+    </joint>
+
+    <link name="${prefix}_bin_grabber_pivot_link">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 ${reverse*M_PI/2}"/>
+        <geometry>
+            <mesh filename="package://grr_description/meshes/bingrab${prefix}_middle.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="red"/>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <box size="0.1 0.1 0.1"/>
+        </geometry>
+        </collision>
+    </link>
+    <joint name="${prefix}_bin_grabber_pivot_joint" type="revolute">
+        <parent link="${prefix}_bin_grabber_base_link"/>
+        <child link="${prefix}_bin_grabber_pivot_link"/>
+        <origin xyz="0.0 0.005 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.35" upper="0.044" effort="10" velocity="0.5"/>
+
+    </joint>
+    <link name="${prefix}_bin_grabber_finger_link">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 ${M_PI}"/>
+        <geometry>
+            <mesh filename="package://grr_description/meshes/bingrab${prefix}_top.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="blue"/>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <box size="0.1 0.1 0.1"/>
+        </geometry>
+        </collision>
+    </link>
+    <joint name="${prefix}_bin_grabber_finger_joint" type="revolute">
+        <parent link="${prefix}_bin_grabber_pivot_link"/>
+        <child link="${prefix}_bin_grabber_finger_link"/>
+        <origin xyz="${0.01*reverse} 0.002 0.06" rpy="0 0 0"/>
+        <axis xyz="0 ${reverse} 0"/>
+        <!-- add joint limits -->
+        <limit lower="-3.14" upper="0.39" effort="10" velocity="0.5"/>
+    </joint>
+</xacro:macro>
+</robot>

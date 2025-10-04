@@ -1,0 +1,84 @@
+In file included from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/include/grr_hardware/isaac_drive.hpp:33[m[K,
+                 from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:15[m[K:
+[01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_box.h:25:2:[m[K [01;35m[Kwarning: [m[K#warning "This header include is deprecated. Please update your code to use 'realtime_box.hpp' header." [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   25 | #[01;35m[Kwarning[m[K \
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/include/grr_hardware/can_interface.hpp:35[m[K,
+                 from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/can_interface.cpp:15[m[K:
+[01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_box.h:25:2:[m[K [01;35m[Kwarning: [m[K#warning "This header include is deprecated. Please update your code to use 'realtime_box.hpp' header." [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   25 | #[01;35m[Kwarning[m[K \
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/include/grr_hardware/can_interface.hpp:36[m[K:
+[01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_buffer.h:25:2:[m[K [01;35m[Kwarning: [m[K#warning "This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header." [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   25 | #[01;35m[Kwarning[m[K \
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/include/grr_hardware/isaac_drive.hpp:34[m[K:
+[01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_buffer.h:25:2:[m[K [01;35m[Kwarning: [m[K#warning "This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header." [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   25 | #[01;35m[Kwarning[m[K \
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/include/grr_hardware/can_interface.hpp:37[m[K:
+[01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_publisher.h:25:2:[m[K [01;35m[Kwarning: [m[K#warning "This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header." [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   25 | #[01;35m[Kwarning[m[K \
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/include/grr_hardware/isaac_drive.hpp:35[m[K:
+[01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_publisher.h:25:2:[m[K [01;35m[Kwarning: [m[K#warning "This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header." [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   25 | #[01;35m[Kwarning[m[K \
+      |  [01;35m[K^~~~~~~[m[K
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/can_interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type grr_hardware::CanInterface::[01;32m[Kread[m[K(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/can_interface.cpp:318:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<short unsigned int>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  318 |         for (int i = 0;[01;35m[Ki<recorded_serial_numbers_.size()[m[K;i++){
+      |                        [01;35m[K~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/can_interface.cpp:296:87:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  296 | hardware_interface::return_type grr_hardware::CanInterface::read([01;35m[Kconst rclcpp::Time & time[m[K, const rclcpp::Duration & period)
+      |                                                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/can_interface.cpp:296:118:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  296 | hardware_interface::return_type grr_hardware::CanInterface::read(const rclcpp::Time & time, [01;35m[Kconst rclcpp::Duration & period[m[K)
+      |                                                                                             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/can_interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type grr_hardware::CanInterface::[01;32m[Kwrite[m[K(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/can_interface.cpp:352:88:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  352 | hardware_interface::return_type grr_hardware::CanInterface::write([01;35m[Kconst rclcpp::Time & time[m[K, const rclcpp::Duration & period)
+      |                                                                   [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/can_interface.cpp:352:119:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  352 | hardware_interface::return_type grr_hardware::CanInterface::write(const rclcpp::Time & time, [01;35m[Kconst rclcpp::Duration & period[m[K)
+      |                                                                                              [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn grr_hardware::IsaacDriveHardware::[01;32m[Kon_init[m[K(const hardware_interface::HardwareInfo&)[m[K’:
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:45:30:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstd::enable_if_t<is_ptr_or_smart_ptr<U>, void> realtime_tools::RealtimeBoxBase<T, mutex_type>::[01;32m[Kset[m[K(const T&) [35m[K[with U = std::shared_ptr<sensor_msgs::msg::JointState_<std::allocator<void> > >; T = std::shared_ptr<sensor_msgs::msg::JointState_<std::allocator<void> > >; mutex_type = std::mutex; std::enable_if_t<is_ptr_or_smart_ptr<U>, void> = void][m[K[m[K’ is deprecated: Use set(const std::function<void(T &)> & func) instead! [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   45 |   [01;35m[Kreceived_joint_msg_ptr_.set(std::make_shared<sensor_msgs::msg::JointState>(empty_joint_state))[m[K;
+      |   [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_box.h:18[m[K:
+[01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_box.hpp:262:59:[m[K [01;36m[Knote: [m[Kdeclared here
+  262 |   typename std::enable_if_t<is_ptr_or_smart_ptr<U>, void> [01;36m[Kset[m[K(const T & value)
+      |                                                           [01;36m[K^~~[m[K
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:[m[K In lambda function:
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:53:34:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstd::enable_if_t<is_ptr_or_smart_ptr<U>, void> realtime_tools::RealtimeBoxBase<T, mutex_type>::[01;32m[Kset[m[K(const T&) [35m[K[with U = std::shared_ptr<sensor_msgs::msg::JointState_<std::allocator<void> > >; T = std::shared_ptr<sensor_msgs::msg::JointState_<std::allocator<void> > >; mutex_type = std::mutex; std::enable_if_t<is_ptr_or_smart_ptr<U>, void> = void][m[K[m[K’ is deprecated: Use set(const std::function<void(T &)> & func) instead! [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   53 |       [01;35m[Kreceived_joint_msg_ptr_.set(std::move(msg))[m[K;
+      |       [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_box.hpp:262:59:[m[K [01;36m[Knote: [m[Kdeclared here
+  262 |   typename std::enable_if_t<is_ptr_or_smart_ptr<U>, void> [01;36m[Kset[m[K(const T & value)
+      |                                                           [01;36m[K^~~[m[K
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type grr_hardware::IsaacDriveHardware::[01;32m[Kread[m[K(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:218:30:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstd::enable_if_t<is_ptr_or_smart_ptr<U>, void> realtime_tools::RealtimeBoxBase<T, mutex_type>::[01;32m[Kget[m[K(T&) const [35m[K[with U = std::shared_ptr<sensor_msgs::msg::JointState_<std::allocator<void> > >; T = std::shared_ptr<sensor_msgs::msg::JointState_<std::allocator<void> > >; mutex_type = std::mutex; std::enable_if_t<is_ptr_or_smart_ptr<U>, void> = void][m[K[m[K’ is deprecated: Use get(const std::function<void(const T &)> & func) instead! [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  218 |   [01;35m[Kreceived_joint_msg_ptr_.get(last_command_msg)[m[K;
+      |   [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/realtime_tools/realtime_tools/realtime_box.hpp:315:59:[m[K [01;36m[Knote: [m[Kdeclared here
+  315 |   typename std::enable_if_t<is_ptr_or_smart_ptr<U>, void> [01;36m[Kget[m[K(T & in) const
+      |                                                           [01;36m[K^~~[m[K
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:214:93:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  214 | hardware_interface::return_type grr_hardware::IsaacDriveHardware::read([01;35m[Kconst rclcpp::Time & time[m[K, const rclcpp::Duration & period)
+      |                                                                        [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:214:124:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  214 | _interface::return_type grr_hardware::IsaacDriveHardware::read(const rclcpp::Time & time, [01;35m[Kconst rclcpp::Duration & period[m[K)
+      |                                                                                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type grr_hardware::IsaacDriveHardware::[01;32m[Kwrite[m[K(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:243:94:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  243 | hardware_interface::return_type grr_hardware::IsaacDriveHardware::write([01;35m[Kconst rclcpp::Time & time[m[K, const rclcpp::Duration & period)
+      |                                                                         [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/isaac_drive.cpp:243:125:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kperiod[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  243 | interface::return_type grr_hardware::IsaacDriveHardware::write(const rclcpp::Time & time, [01;35m[Kconst rclcpp::Duration & period[m[K)
+      |                                                                                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/can_interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type grr_hardware::CanInterface::[01;32m[Kread[m[K(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_hardware/src/can_interface.cpp:350:1:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  350 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K

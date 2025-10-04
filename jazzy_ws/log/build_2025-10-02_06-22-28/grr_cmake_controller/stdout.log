@@ -1,0 +1,71 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.3 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found controller_interface: 4.27.0 (/opt/ros/jazzy/share/controller_interface/cmake)
+-- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+-- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found nav_msgs: 5.3.5 (/opt/ros/jazzy/share/nav_msgs/cmake)
+-- Found tf2: 0.36.8 (/opt/ros/jazzy/share/tf2/cmake)
+-- Found tf2_msgs: 0.36.8 (/opt/ros/jazzy/share/tf2_msgs/cmake)
+-- Configuring done (1.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/build/grr_cmake_controller
+[ 25%] [32mBuilding CXX object CMakeFiles/grr_cmake_controller.dir/src/grr_cmake_controller.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/grr_cmake_controller.dir/src/speed_limiter.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/grr_cmake_controller.dir/src/odometry.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library libgrr_cmake_controller.so[0m
+[100%] Built target grr_cmake_controller
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller//mecanum_plugin.xml
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/include/grr_cmake_controller/grr_cmake_controller.hpp
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/include/grr_cmake_controller/odometry.hpp
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/include/grr_cmake_controller/rolling_mean_accumulator.hpp
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/include/grr_cmake_controller/speed_limiter.hpp
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/include/grr_cmake_controller/visibility_control.h
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/lib/libgrr_cmake_controller.so
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/environment/library_path.sh
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/environment/library_path.dsv
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/ament_index/resource_index/package_run_dependencies/grr_cmake_controller
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/ament_index/resource_index/parent_prefix_path/grr_cmake_controller
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/environment/ament_prefix_path.sh
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/environment/ament_prefix_path.dsv
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/environment/path.sh
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/environment/path.dsv
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/local_setup.bash
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/local_setup.sh
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/local_setup.zsh
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/local_setup.dsv
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/package.dsv
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/ament_index/resource_index/packages/grr_cmake_controller
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/ament_index/resource_index/controller_interface__pluginlib__plugin/grr_cmake_controller
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/cmake/ament_cmake_export_libraries-extras.cmake
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/cmake/grr_cmake_controllerConfig.cmake
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/cmake/grr_cmake_controllerConfig-version.cmake
+-- Symlinking: /workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/install/grr_cmake_controller/share/grr_cmake_controller/package.xml

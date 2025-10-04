@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-b99420eabcae2bae1bb1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "grr_cmake_controller",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "grr_cmake_controller::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-grr_cmake_controller-920e2f37f1f3ddd74b2e.json",
+					"name" : "grr_cmake_controller",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "grr_cmake_controller_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-grr_cmake_controller_uninstall-c631847bd9c4450cfd62.json",
+					"name" : "grr_cmake_controller_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-098b8b4b2a9e291cbf9b.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/build/grr_cmake_controller",
+		"source" : "/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/src/grr_cmake_controller"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
