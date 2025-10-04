@@ -24,6 +24,7 @@ add_library(
   SHARED
   src/isaac_drive.cpp
   src/can_interface.cpp
+  src/base_hardware_interface.cpp
 )
 target_include_directories(
   ${PROJECT_NAME}

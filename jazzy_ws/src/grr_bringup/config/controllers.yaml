@@ -68,5 +68,7 @@ effort_controller:
   ros__parameters:
     cmd_timeout: 1.0
     joints:
-      - small_package_grabber_roller_1_joint
-      - small_package_sweeper_roller_joint
+      - "intake_roller_1_joint"
+      - "intake_roller_2_joint"
+      - "sorter_turntable_joint"
+
