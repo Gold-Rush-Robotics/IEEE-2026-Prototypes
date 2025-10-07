@@ -6,10 +6,10 @@ Version: October 7th, 2025
 
 // Defined Pins:
 
-int solenoid7 = ; // PINS CURRENTLY UNDEFINED!
-int solenoid3 = ;
-int solenoid8 = ;
-int solenoidPound = ;
+int solenoid7 = 3; // PINS CURRENTLY UNDEFINED!
+int solenoid3 = 2;
+int solenoid8 = 4;
+int solenoidPound = 5;
 
 void setup() {
   // Pins set as output:
