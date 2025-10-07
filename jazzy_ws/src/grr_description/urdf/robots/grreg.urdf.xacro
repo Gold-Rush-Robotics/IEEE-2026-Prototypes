@@ -14,6 +14,7 @@
   <xacro:include filename="$(find grr_description)/urdf/parts/bin_grabber.xacro"/>
   <xacro:include filename="$(find grr_description)/urdf/parts/zed_macro.xacro"/>
   <xacro:include filename="$(find grr_description)/urdf/control/drive.xacro"/>
+  <xacro:include filename="$(find grr_description)/urdf/parts/usb_camera.xacro"/>
 
 
   <!-- Properties -->
@@ -27,9 +28,9 @@
   <xacro:property name="wheel_weight" value="0.136" />
   <xacro:property name="wheel_offset" value="0" />
 
-  <xacro:property name="wheel_joint_pos_x" value="0.09" />
+  <xacro:property name="wheel_joint_pos_x" value="0.0855" />
   <xacro:property name="wheel_joint_pos_y" value="0.10075" />
-  <xacro:property name="wheel_joint_pos_z" value="0.07793" />
+  <xacro:property name="wheel_joint_pos_z" value="0.011" />
   
   <xacro:property name="roller_total" value="8" />
   <xacro:property name="roller_middle_radius" value="${0.01621/2}" />
@@ -51,10 +52,10 @@
     type="1"
     radius="${wheel_radius}"  
     width="${wheel_thickness}"
-    flip="-${pi/2}"
+    flip="${0}"
     pos_x="${wheel_joint_pos_x + wheel_offset}" 
     pos_y="${wheel_joint_pos_y}" 
-    pos_z="-${0}"
+    pos_z="-${wheel_joint_pos_z}"
     mass="${wheel_weight}"
   />
 
@@ -63,10 +64,10 @@
     type="1"
     radius="${wheel_radius}" 
     width="${wheel_thickness}"
-    flip="-${pi/2}"
+    flip="${pi}"
     pos_x="-${wheel_joint_pos_x + wheel_offset}" 
     pos_y="-${wheel_joint_pos_y}" 
-    pos_z="-${0}" 
+    pos_z="-${wheel_joint_pos_z}" 
     mass="${wheel_weight}"
   />
 
@@ -75,10 +76,10 @@
     type="2"
     radius="${wheel_radius}" 
     width="${wheel_thickness}"
-    flip="-${pi/2}"
+    flip="${pi}"
     pos_x="-${wheel_joint_pos_x + wheel_offset}" 
     pos_y="${wheel_joint_pos_y}" 
-    pos_z="-${0}" 
+    pos_z="-${wheel_joint_pos_z}" 
     mass="${wheel_weight}"
   /> 
 
@@ -87,10 +88,10 @@
     type="2"
     radius="${wheel_radius}" 
     width="${wheel_thickness}"
-    flip="-${pi/2}"
+    flip="${0}"
     pos_x="${wheel_joint_pos_x + wheel_offset}" 
     pos_y="-${wheel_joint_pos_y}" 
-    pos_z="-${0}" 
+    pos_z="-${wheel_joint_pos_z}" 
     mass="${wheel_weight}"
   /> 
 
@@ -118,11 +119,20 @@
   <xacro:zed_camera name="zed21" model="zed2i" enable_gnss="false" custom_baseline="0"
     parent="chassis_link">
     <origin
-        xyz="0 0 0"
-        rpy="${3.1415/12} ${3.1415/2} 0" />
+        xyz="${wheel_joint_pos_x} -${wheel_joint_pos_y-0.01} 0.125"
+        rpy="${3.1415/2} 0 ${3.1415/12}" />
     <gnss_origin
         xyz="0 0 0"
         rpy="0 0 0" />
   </xacro:zed_camera>
+  <xacro:usb_camera prefix="right" parent="chassis_link">
+    <origin xyz="0 ${wheel_joint_pos_y+0.01} 0.06" rpy="0 0 ${3.1415}"/>
+  </xacro:usb_camera>
+  <xacro:usb_camera prefix="left" parent="chassis_link">
+    <origin xyz="0 -${wheel_joint_pos_y+0.01} 0.06" rpy="0 0 0"/>
+  </xacro:usb_camera>
+  <xacro:usb_camera prefix="front" parent="chassis_link">
+    <origin xyz="${wheel_joint_pos_x+0.02} ${wheel_joint_pos_y-0.01} 0.08" rpy="0 0 ${3.1415/2}"/>
+  </xacro:usb_camera>
 
 </robot>

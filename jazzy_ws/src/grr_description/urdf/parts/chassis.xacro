@@ -14,12 +14,12 @@
         </geometry>
         <!-- <material name="blue"/> -->
       </visual>
-      <collision>
+      <!-- <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
           <box size="${length} ${width} ${height/2}"/>
         </geometry>
-      </collision>
+      </collision> -->
     </link>
 
     <joint name="chassis_joint" type="fixed">

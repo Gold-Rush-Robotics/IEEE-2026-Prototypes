@@ -29,11 +29,11 @@
         </geometry>
         <material name="zed2i_mat" />
       </visual>
-      <collision>
+      <!-- <collision>
         <geometry>
           <box size="${height} ${baseline} ${height}"/>
         </geometry>
-      </collision>
+      </collision> -->
     </link>
     <joint name="zed_camera_center_joint" type="fixed">
       <parent link="zed_mount_link"/>

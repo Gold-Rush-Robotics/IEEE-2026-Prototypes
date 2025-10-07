@@ -9,19 +9,19 @@
 
     <link name="usb_camera_${prefix}_link">
         <visual>
-            <origin xyz="0 0 0" rpy="0 0 -${prefix*pi/2}" />
+            <origin xyz="0 0 0" rpy="0 0 -${pi/2}" />
             <geometry>
-                <mesh filename="package://rift_description/meshes/USBCamera.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://grr_description/meshes/camera.stl" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="brown" />
         </visual>
-        <collision>
+        <!-- <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
                 <box size="${camera_length} ${camera_width} ${camera_height}" />
             </geometry>
-            <!-- <material name="ghost" /> -->
-        </collision>
+            <material name="ghost" />
+        </collision> -->
         <xacro:inertial_box mass="${camera_mass}" x="${camera_length}" y="${camera_width}" z="${camera_height}">
             <origin xyz="0 0 0" rpy="0 0 0" />
         </xacro:inertial_box>
