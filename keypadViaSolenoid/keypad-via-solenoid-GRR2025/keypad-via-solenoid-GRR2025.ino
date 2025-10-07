@@ -1,55 +1,58 @@
 /*
-Author: Benjamin LaCroix
-Version: September 25th, 2025
+About: Made for the 2026 IEEE Competition keypad task. 
+To accomplish this task, solenoids are used to enter the code 73738# (RESET#)
+Version: October 7th, 2025
 */
 
-int solenoid7 = ;
+// Defined Pins:
+
+int solenoid7 = ; // PINS CURRENTLY UNDEFINED!
 int solenoid3 = ;
 int solenoid8 = ;
 int solenoidPound = ;
-boolean runOnce = true;
 
 void setup() {
-  pinMode(solenoid7, OUTPUT); //Sets the pin as an output
+  // Pins set as output:
+
+  pinMode(solenoid7, OUTPUT);
+  pinMode(solenoid3, OUTPUT);
+  pinMode(solenoid8, OUTPUT);
+  pinMode(solenoidPound, OUTPUT);
+
+  // Solenoid sequence runs:
+  // Code: 73738# (RESET#)
+
+  digitalWrite(solenoid7, HIGH); // Solenoid presses 7.
+  delay(1000);
+  digitalWrite(solenoid7, LOW);
+  delay(1000);
+
+  digitalWrite(solenoid3, HIGH); // Solenoid presses 3.
+  delay(1000);
+  digitalWrite(solenoid3, LOW);
+  delay(1000);
+
+  digitalWrite(solenoid7, HIGH); // Solenoid presses 7.
+  delay(1000);
+  digitalWrite(solenoid7, LOW);
+  delay(1000);
+
+  digitalWrite(solenoid3, HIGH); // Solenoid presses 3.
+  delay(1000);
+  digitalWrite(solenoid3, LOW);
+  delay(1000);
+
+  digitalWrite(solenoid8, HIGH); // Solenoid presses 8.
+  delay(1000);
+  digitalWrite(solenoid8, LOW);
+  delay(1000);
+
+  digitalWrite(solenoidPound, HIGH); // Solenoid presses #.
+  delay(1000);
+  digitalWrite(solenoidPound, LOW);
+  delay(1000);
 }
 
 void loop() {
-  if (runOnce) {
-    // Code to run once:
-    digitalWrite(solenoid7, HIGH);
-    delay(1000);
-    digitalWrite(solenoid7, LOW);
-    delay(1000);
-
-    digitalWrite(solenoid3, HIGH);
-    delay(1000);
-    digitalWrite(solenoid3, LOW);
-    delay(1000);
-
-    digitalWrite(solenoid7, HIGH);
-    delay(1000);
-    digitalWrite(solenoid7, LOW);
-    delay(1000);
-
-    digitalWrite(solenoid3, HIGH);
-    delay(1000);
-    digitalWrite(solenoid3, LOW);
-    delay(1000);
-
-    digitalWrite(solenoid8, HIGH);
-    delay(1000);
-    digitalWrite(solenoid8, LOW);
-    delay(1000);
-
-    digitalWrite(solenoidPound, HIGH);
-    delay(1000);
-    digitalWrite(solenoidPound, LOW);
-    delay(1000);
-
-    // Stop code after single loop
-    runOnce = false;
-  }
-  
-
-
+  // Code only needs to run once.
 }
