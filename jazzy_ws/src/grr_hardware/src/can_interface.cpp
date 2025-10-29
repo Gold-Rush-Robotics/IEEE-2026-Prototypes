@@ -126,6 +126,11 @@ hardware_interface::return_type CanInterface::write(const rclcpp::Time &, const 
     frame.can_id = COMMAND_ID; // 0x100 for "FRONT"
     frame.can_dlc = 8;
     float velocity = static_cast<float>(hw_commands_velocity_[i]);
+    // if the motor is on the right side, invert the velocity command
+    if (it->second[0:2] == "FR" || it->second == "RR")
+    {
+      velocity = -velocity;
+    }
     memcpy(frame.data, &velocity, sizeof(float));
     std::string can_joint_name = it->second;
     // Ensure 4-byte joint name with padding
