@@ -1,4 +1,0 @@
-source;share/grr_description/local_setup.bash
-source;share/grr_description/local_setup.dsv
-source;share/grr_description/local_setup.sh
-source;share/grr_description/local_setup.zsh

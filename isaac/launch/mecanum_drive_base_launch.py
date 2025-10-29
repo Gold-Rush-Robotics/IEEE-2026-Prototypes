@@ -99,7 +99,7 @@ viewports.set_camera_view(eye=np.array([2.2, 1.2, 0.8]), target=np.array([0, 0, 
 
 # Load the background stage
 stage.add_reference_to_stage(
-    assets_root_path + BACKGROUND_USD_PATH, BACKGROUND_STAGE_PATH
+    BACKGROUND_USD_PATH, BACKGROUND_STAGE_PATH
 )
 
 
@@ -271,7 +271,10 @@ try:
 
             ("ArticulationController.inputs:robotPath", MECANUM_DRIVE_BASE_STAGE_PATH + "/base_link"),
 
-            ("PublishJointState.inputs:targetPrim", "/mecanum_drive_base/base_link"),
+            ("PublishJointState.inputs:targetPrim", MECANUM_DRIVE_BASE_STAGE_PATH + "/base_link"),
+            
+            ("PublishJointState.inputs:topicName", "isaac_joint_states"),
+            ("SubscribeJointState.inputs:topicName", "isaac_joint_commands"),
 
         ],
         },

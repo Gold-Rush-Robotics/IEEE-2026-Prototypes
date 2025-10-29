@@ -2,10 +2,11 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   <ros2_control name="gregg" type="system">
     <hardware>
-      <plugin>grr_hardware/IsaacDriveHardware</plugin>
+      <!-- <plugin>grr_hardware/IsaacDriveHardware</plugin> -->
+      <plugin>grr_hardware/CanInterface</plugin>
       <param name="example_param_hw_start_duration_sec">3.0</param>
       <param name="example_param_hw_stop_duration_sec">3.0</param>
-      <param name="teensy1_serial_number">3030313330356332</param>
+      <!-- <param name="teensy1_serial_number">3030313330356332</param>
       <param name="teensy1_joint_names">
         <item>front_right_mecanum_joint</item>
         <item>front_left_mecanum_joint</item>
@@ -79,7 +80,7 @@
         <item name="PWM">9</item>
       </param>
         
-      <param name="teensy2_serial_number">3030313330356332</param>
+      <param name="teensy2_serial_number">3030313330356332</param> -->
     </hardware>
     <joint name="front_right_mecanum_joint">
       <command_interface name="velocity">
@@ -113,7 +114,7 @@
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
-    <joint name="intake_roller_1_joint">
+    <!-- <joint name="intake_roller_1_joint">
       <command_interface name="effort"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
@@ -147,7 +148,7 @@
       <command_interface name="position"/>
       <state_interface name="position"/>
       <state_interface name="velocity"/>
-    </joint>
+    </joint> -->
 
   </ros2_control>
 

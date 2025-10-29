@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/workspace/DevEnv/jazzy_ws/IEEE-2026-Prototypes/jazzy_ws/build/grr_cmake_controller/libgrr_cmake_controller.so" "TARGETS" "grr_cmake_controller" "RUNTIME_DESTINATION" "bin" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib")

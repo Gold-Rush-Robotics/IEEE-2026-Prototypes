@@ -1,7 +1,5 @@
 #pragma once
-
 #include "grr_hardware/base_hardware_interface.hpp"
-
 #include <rclcpp/rclcpp.hpp>
 #include <hardware_interface/system_interface.hpp>
 #include <sys/socket.h>
@@ -10,11 +8,10 @@
 #include <linux/can/raw.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
-
+#include <map>
 
 namespace grr_hardware
 {
-
 class CanInterface : public BaseDriveHardware
 {
 public:
@@ -24,32 +21,18 @@ public:
 
 private:
   // CAN communication settings
-  std::string can_interface_name_;
-  int socket_fd_;
+  std::string can_interface_name_ = "can0"; // Default interface
+  int socket_fd_ = -1;
+
+  // Joint name to CAN joint name mapping
+  std::map<std::string, std::string> ros_to_can_joint_names_;
+
+  // CAN IDs for "FRONT" node
+  static constexpr uint32_t COMMAND_ID = 0x100; // rxId in firmware
+  static constexpr uint32_t FEEDBACK_ID = 0x101; // txId in firmware
 
   // Utility
   bool open_can_socket(const std::string & interface_name);
   void close_can_socket();
-  enum CAN_IDs
-  {
-    E_STOP = 0x000,
-    HALT = 0x100,
-    RESTART = 0x200,
-    HEARTBEAT = 0x300,
-    QUERY = 0x400,
-    ASSIGN_ID = 0x500,
-    FIRMWARE = 0x600,
-    FATAL = 0x1000,
-    ERROR = 0x2000,
-    MOTOR_COMMAND = 0x3000,
-    SERVO_CONTROL = 0x4000,
-    DIO = 0x5000,
-    SENSORS = 0x6000,
-    WARNINGS = 0x7000,
-    LOGS = 0x8000,
-    MOANING = 0xFFFE,
-    SGA_WARRANTY = 0xFFFF
-  };
 };
-
-}  // namespace grr_hardware
+} // namespace grr_hardware
