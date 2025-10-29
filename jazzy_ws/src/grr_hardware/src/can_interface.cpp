@@ -127,7 +127,7 @@ hardware_interface::return_type CanInterface::write(const rclcpp::Time &, const 
     frame.can_dlc = 8;
     float velocity = static_cast<float>(hw_commands_velocity_[i]);
     // if the motor is on the right side, invert the velocity command
-    if (it->second[0:2] == "FR" || it->second == "RR")
+    if (it->second == "FR" || it->second == "RR")
     {
       velocity = -velocity;
     }
