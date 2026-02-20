@@ -1,55 +1,47 @@
 /*
-Author: Benjamin LaCroix
-Version: September 25th, 2025
+About: Made for the 2026 IEEE Competition keypad task. 
+To accomplish this task, solenoids are used to enter the code 73738# (RESET#)
+Version: October 7th, 2025
 */
 
-int solenoid7 = ;
-int solenoid3 = ;
-int solenoid8 = ;
-int solenoidPound = ;
-boolean runOnce = true;
+// Defined Pins:
+
+int solenoid3 = 3;
+int solenoid7 = 2;
+int solenoid8 = 4;
+int solenoidPound = 5;
+int delayAfterHigh= 100;
+int delayAfterLow = 2000;
+int soleArr[6] = {solenoid7, solenoid3, solenoid7, solenoid3, solenoid8, solenoidPound};
 
 void setup() {
-  pinMode(solenoid7, OUTPUT); //Sets the pin as an output
+  // Pins set as output:
+
+  pinMode(solenoid7, OUTPUT);
+  pinMode(solenoid3, OUTPUT);
+  pinMode(solenoid8, OUTPUT);
+  pinMode(solenoidPound, OUTPUT);
+
+  // Solenoid sequence runs:
+  // Code: 73738# (RESET#)
+
+  
+}
+
+void funcInputter(int num)
+{
+  digitalWrite(num, HIGH);
+  delay(delayAfterHigh);
+  digitalWrite(num, LOW);
+  delay(delayAfterLow);
 }
 
 void loop() {
-  if (runOnce) {
-    // Code to run once:
-    digitalWrite(solenoid7, HIGH);
-    delay(1000);
-    digitalWrite(solenoid7, LOW);
-    delay(1000);
-
-    digitalWrite(solenoid3, HIGH);
-    delay(1000);
-    digitalWrite(solenoid3, LOW);
-    delay(1000);
-
-    digitalWrite(solenoid7, HIGH);
-    delay(1000);
-    digitalWrite(solenoid7, LOW);
-    delay(1000);
-
-    digitalWrite(solenoid3, HIGH);
-    delay(1000);
-    digitalWrite(solenoid3, LOW);
-    delay(1000);
-
-    digitalWrite(solenoid8, HIGH);
-    delay(1000);
-    digitalWrite(solenoid8, LOW);
-    delay(1000);
-
-    digitalWrite(solenoidPound, HIGH);
-    delay(1000);
-    digitalWrite(solenoidPound, LOW);
-    delay(1000);
-
-    // Stop code after single loop
-    runOnce = false;
+  // Prototype Optimization 2
+  for (int i = 0; i<6; i++)
+  {
+    funcInputter(soleArr[i]);
   }
-  
 
-
+  delay(5000);
 }
