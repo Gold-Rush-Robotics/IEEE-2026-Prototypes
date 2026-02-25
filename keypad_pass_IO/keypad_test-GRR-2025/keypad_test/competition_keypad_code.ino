@@ -57,7 +57,6 @@ void loop(){
       analogWrite(blue, 0); 
       digitalWrite(led_pin, LOW);
       Serial.println("Password cleared. LEDs off.");
-      randomColor = random(4);
     } 
     else if(key == '#') {
       Serial.println("# pressed. Checking password...");
@@ -85,7 +84,7 @@ void loop(){
         {
           redBrightness = 0;
           blueBrightness = 0;
-          greenBrightness = 100;
+          greenBrightness = 150;
         }
         else
         {
